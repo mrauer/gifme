@@ -3,19 +3,18 @@ package main
 import (
 	"github.com/mrauer/gifme/lib"
 	"github.com/xfrr/goffmpeg/transcoder"
-)
-
-const (
-	INPUT_PATH   = "example/input.mp4"
+	"flag"
 )
 
 func main() {
 	trans := new(transcoder.Transcoder)
 
-	err := lib.PaletteGen(trans, INPUT_PATH)
+	input_path := flag.String("input", "example/input.mp4", "The file we want to convert to git")
+
+	err := lib.PaletteGen(trans, *input_path)
 
 	if err == nil {
-		err = lib.PaletteUse(INPUT_PATH)
+		err = lib.PaletteUse(*input_path)
 	}
 
 	if err == nil {
