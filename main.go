@@ -11,6 +11,8 @@ func main() {
 
 	input_path := flag.String("input", "example/input.mp4", "The file we want to convert to git")
 
+	flag.Parse()
+
 	err := lib.PaletteGen(trans, *input_path)
 
 	if err == nil {

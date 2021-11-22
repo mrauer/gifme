@@ -38,8 +38,9 @@ apt install gifsicle
 Then here is how you can install `gifme`:
 
 ```sh
-curl -Lo gitdump https://github.com/mrauer/gifme/releases/download/v1.0.0/gifme_1.0.0_linux_amd64 && chmod +x gifme && sudo mv gifme /usr/local/bin
-
+base_url='https://github.com/mrauer/gifme/releases/download/v1.0.0'
+curl -Lo gifme "$base_url"/gifme_1.0.0_linux_amd64 && \
+chmod +x gifme && sudo mv gifme /usr/local/bin
 ```
 
 <!-- INSTALL FOR MAC -->
@@ -55,7 +56,9 @@ brew install gifsicle
 Run the following command:
 
 ```sh
-curl -Lo gitdump https://github.com/mrauer/gitdump/releases/download/v0.2.0/gifme_1.0.0_darwin_amd64 && chmod +x gifme && sudo mv gifme /usr/local/bin
+base_url='https://github.com/mrauer/gifme/releases/download/v1.0.0'
+curl -Lo gifme "$base_url"/gifme_1.0.0_darwin_amd64 && \
+chmod +x gifme && sudo mv gifme /usr/local/bin
 ```
 
 <!-- USAGE -->
@@ -64,7 +67,7 @@ curl -Lo gitdump https://github.com/mrauer/gitdump/releases/download/v0.2.0/gifm
 Usage is platform agnostic:
 
 ```sh
-gifme -input <path_to_your_mp4>
+gifme --input <path-to-your-video-file>
 ```
 
 This will generate an optimized gif file named `output.gif` at the location you ran that command.
