@@ -1,10 +1,10 @@
+# GifMe
+
 <!-- PROJECT LOGO -->
 <p align="center">
   <a href="https://github.com/mrauer/gifme">
     <img src="images/logo.png" alt="Logo">
   </a>
-
-# GifMe
 
   <p align="center">
     Converts your video to a GIF.
