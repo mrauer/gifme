@@ -60,17 +60,14 @@ func PaletteUse(input_path string) error {
 }
 
 // Attempts lossless reduction of an image's file size.
-func CompressGit() error {
+func CompressGit() {
 	cmd := exec.Command("gifsicle", []string{"-i", intermediate_path, "-O3", "--colors", "256", "-o", OUTPUT_GIT}...)
 
 	err := cmd.Run()
 
 	if err != nil {
 		fmt.Println(err.Error())
-		return err
 	}
-
-	return nil
 }
 
 func init() {

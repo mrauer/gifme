@@ -7,20 +7,26 @@ import (
 	"github.com/xfrr/goffmpeg/transcoder"
 )
 
+var (
+	inputPath *string
+)
+
 func main() {
 	trans := new(transcoder.Transcoder)
 
-	input_path := flag.String("input", "example/input.mp4", "The file we want to convert to git")
-
 	flag.Parse()
 
-	err := lib.PaletteGen(trans, *input_path)
+	err := lib.PaletteGen(trans, *inputPath)
 
 	if err == nil {
-		err = lib.PaletteUse(*input_path)
+		err = lib.PaletteUse(*inputPath)
 	}
 
 	if err == nil {
 		lib.CompressGit()
 	}
+}
+
+func init() {
+	inputPath = flag.String("input", "example/input.mp4", "The file we want to convert to git")
 }
