@@ -1,3 +1,5 @@
 .DS_Store
+bin/darwin/gifme
+bin/linux/gifme
 gifme
 output.gif

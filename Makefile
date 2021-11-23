@@ -6,3 +6,7 @@ dev:
 
 binary:
 	env GOOS=linux GOARCH=amd64 go build -o gifme
+
+release:
+	env GOOS=linux GOARCH=amd64 go build -o bin/linux/gifme
+	env GOOS=darwin GOARCH=amd64 go build -o bin/darwin/gifme

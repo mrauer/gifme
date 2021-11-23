@@ -1,26 +1,32 @@
 package main
 
 import (
+	"flag"
+
 	"github.com/mrauer/gifme/lib"
 	"github.com/xfrr/goffmpeg/transcoder"
 )
 
-const (
-	INPUT_PATH   = "example/input.mp4"
+var (
+	inputPath *string
 )
 
 func main() {
 	trans := new(transcoder.Transcoder)
 
-	err := lib.PaletteGen(trans, INPUT_PATH)
+	flag.Parse()
+
+	err := lib.PaletteGen(trans, *inputPath)
 
 	if err == nil {
-		err = lib.PaletteUse(INPUT_PATH)
+		err = lib.PaletteUse(*inputPath)
 	}
 
 	if err == nil {
 		lib.CompressGit()
 	}
+}
 
-	return
+func init() {
+	inputPath = flag.String("input", "example/input.mp4", "The file we want to convert to git")
 }
