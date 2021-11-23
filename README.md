@@ -4,7 +4,7 @@
     <img src="images/logo.png" alt="Logo">
   </a>
 
-  <h3 align="center">GifMe</h3>
+# GifMe
 
   <p align="center">
     Converts your video to a GIF.

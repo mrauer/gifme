@@ -1,9 +1,10 @@
 package main
 
 import (
+	"flag"
+
 	"github.com/mrauer/gifme/lib"
 	"github.com/xfrr/goffmpeg/transcoder"
-	"flag"
 )
 
 func main() {
@@ -22,6 +23,4 @@ func main() {
 	if err == nil {
 		lib.CompressGit()
 	}
-
-	return
 }
