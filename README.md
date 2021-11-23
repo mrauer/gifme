@@ -7,7 +7,7 @@
   <h3 align="center">GifMe</h3>
 
   <p align="center">
-    Video to animated GIF converter.
+    Converts your video to a GIF.
     <br />
     <br />
     <a href="https://github.com/mrauer/gifme/issues">Report Bug</a>
@@ -71,6 +71,8 @@ gifme --input <path-to-your-video-file>
 ```
 
 This will generate an optimized gif file named `output.gif` at the location you ran that command.
+
+Currently only supporting `.mp4` files.
 
 <!-- LICENSE -->
 ## License
